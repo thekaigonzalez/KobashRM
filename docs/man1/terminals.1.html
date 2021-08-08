@@ -1,0 +1,57 @@
+<html lang="en-US">
+
+<h1>terminals(1) - Manual Page</h1>
+<link rel="stylesheet" href="https://thekaigonzalez.github.io/SharedStyles/styles.css">
+
+
+<!-- Add more headers -->
+<table class="sec-table">
+    <tr>
+        <td>
+            <p class="section-dir">
+                <a href="#NAME">NAME</a> | <a href="#SYNOPSIS">SYNOPSIS</a> | <a href="#DESCRIPTION">DESCRIPTION</a> | <a href="#FOR-DEVELOPERS">FOR DEVELOPERS</a>
+            </p>
+        </td>
+    </tr>
+</table>
+
+<h3 id="NAME">NAME</h3>
+
+<pre>
+    terminals - Terminal Management from terminal-superuser
+</pre>
+
+<h3 id="SYNOPSIS">SYNOPSIS</h3>
+
+<pre>
+    terminals
+        Write a terminal using an absolute path.
+        You can use this or use tkrun manually.
+</pre>
+
+<h3 id="DESCRIPTION">DESCRIPTION</h3>
+
+<pre>
+    /etc/terminals is a txt file containing the initial terminal for klibc.
+
+    /etc/terminals contains basic find-and-replace syntax:
+
+        <em class="emphasis-command">/: ./kobash-mac (HOME)</em>
+
+    if you're making custom distributions, you must change this to your distribution's ABS-PATH or else it'll Default to ./
+    please see <a href="#FOR-DEVELOPERS">FOR DEVELOPERS</a> section for more details.
+</pre>
+
+<h3 id="FOR-DEVELOPERS">FOR DEVELOPERS</h3>
+
+<pre>
+    Please edit these files.
+
+        <b class="sub-section-header"><a href="https://github.com/thekaigonzalez/KobashRM/master/kobash/0/kobash-lib.lua">./kobash/0/kobash-lib.lua (line 72)</a></b>
+            local abc = string.gsub(terminal_to_run, "/", "./kobash-mac/", 1)
+                                                            ^^^^^^^^^^^
+            Change ./kobash-mac to your HOME directory (kobash-mac as HOME)
+
+</pre>
+
+</html>

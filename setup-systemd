@@ -1,0 +1,7 @@
+local install = {}
+
+function install:install()
+
+end
+
+return install
